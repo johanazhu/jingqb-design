@@ -7,28 +7,60 @@ import { Playground } from 'docz';
 import List from './index.ts';
 import Input from '../Input';
 
+import Icon from '../Icon';
+
+import data from './list.data.json';
+
 # List 列表大组件
 
 此组件用于各类（混合列表）展示的场景，如：多种类型的交互在同一个列表内，即有单选，又有复选，或者点击跳转等情况；
 
 包括但不限于（单选，复选，点击跳转，银行卡，纯文字，输入框，图标）等；
 
-## 一般用法
+## 群体操作——适用于大量数据
 
 <Playground>
   {() => {
     const Temp = () => {
-      const [inputValue, setIsInputValue] = React.useState('');
-      const [inputValue1, setIsInputValue1] = React.useState('');
       return (
-        <List> 我是一个普通的列表 </List>
+        <List
+          bordered
+          dataSource={data.data}
+          renderItem={(item) => (
+            <List.Item 
+              renderIcon={item.icon && <Icon kind={item.icon} size="small" />}
+              hasLink={item.link} 
+              onClick={()=>{
+                alert(item.id)
+              }}>
+              {item.text}
+            </List.Item>
+          )} /> 
       );
     };
     return <Temp />;
   }}
 </Playground>
 
-## 普通列表的自定义用法
+## 单兵作战
+
+<Playground>
+  {() => {
+    const Temp = () => {
+      return (
+        <List.Alone>
+          <Input.Password 
+              groupStyle={{width: '100%' }} 
+              style={{ border: 0, padding: 0 }}/>
+        </List.Alone>
+      );
+    };
+    return <Temp />;
+  }}
+</Playground>
+
+
+## 团队式整合作战
 
 <Playground>
   {() => {
@@ -36,19 +68,24 @@ import Input from '../Input';
       const [inputValue, setIsInputValue] = React.useState('');
       const [inputValue1, setIsInputValue1] = React.useState('');
       return (
-        <List style={{ justifyContent: 'space-between' }}>
+        <List.Group>
+          <List.Alone style={{ justifyContent: 'space-between' }}>
             <div>我是左边</div>
             <div>我是右边</div>
-        </List>
+          </List.Alone>
+          <List.Alone>
+            <Input.Password 
+                groupStyle={{width: '100%' }} 
+                style={{ border: 0, padding: 0 }}/>
+          </List.Alone>
+        </List.Group>
       );
     };
     return <Temp />;
   }}
 </Playground>
 
-List组件提供容器，其内部内容可以自定义，style，class都可扩展
-
-
+<!-- 
 ## 普通列表与其他组件的结合
 
 <Playground>
@@ -68,19 +105,33 @@ List组件提供容器，其内部内容可以自定义，style，class都可扩
   }}
 </Playground>
 
-## 内置列表——一行两列
+## 内置列表
 
 内置列表均是 外层 group 组件，内层为 写好的样子（一行双列，链接模式，Table模式），
 
 使用者只需填入数据即可
 
-## 普通列表与其他组件的结合
+## 内置列表————一行两列
 
 <Playground>
   {() => {
     const Temp = () => {
-      const [inputValue, setIsInputValue] = React.useState('');
-      const [inputValue1, setIsInputValue1] = React.useState('');
+      return (
+        <div>
+          <List.Double leftText="左青龙" rightText="右白虎" />
+          <List.Double leftText="左青龙" rightText="右白虎" />
+        </div>
+      );
+    };
+    return <Temp />;
+  }}
+</Playground>
+
+## 内置列表——链接模式
+
+<Playground>
+  {() => {
+    const Temp = () => {
       return (
         <List.Link onLink={(e) => {
             alert('点击我')  
@@ -91,4 +142,4 @@ List组件提供容器，其内部内容可以自定义，style，class都可扩
     };
     return <Temp />;
   }}
-</Playground>
+</Playground> -->

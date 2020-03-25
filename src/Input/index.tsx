@@ -12,6 +12,8 @@ import Password from './password';
 import Search from './search';
 import Clear from './clear';
 
+// ts 中 函数 上写静态方法会有提示，但并不影响使用
+// 可用 类 的写法避免（类支持静态方法）
 Input.Group = Group;
 Input.Textarea = Textarea;
 Input.Verify = Verify;

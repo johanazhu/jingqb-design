@@ -2,16 +2,148 @@
 @import (reference) '../_style/public.less';
 
 
+// .jqb-list {
+//     position: relative;
+//     display: flex;
+//     box-sizing: border-box;
+//     width: 100%;
+//     padding: 10px 16px;
+//     overflow: hidden;
+//     color: #323233;
+//     font-size: 14px;
+//     line-height: 24px;
+//     background-color: #fff;
+//     &:after {
+//         position: absolute;
+//         box-sizing: border-box;
+//         content: ' ';
+//         pointer-events: none;
+//         right: 0;
+//         bottom: 0;
+//         left: 16px;
+//         border-bottom: 1px solid @globalColorBlack2;
+//         transform: scaleY(0.5);
+//     }
+// }
+
+// .jqb-list__group {
+//     .am-card; 
+//     padding-right: 0; 
+//     padding-left: @verticalGap;
+//     position: relative;
+
+//     .jqb-list {
+//         flex: 1;
+//         // &:last-child {
+//         //     &:after {
+//         //         border: 0;
+//         //         transform: none;
+//         //     }
+//         // }
+//     }
+
+//     .link-btn {
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         right: 10px;
+//         cursor: text;
+//     }
+// }
+
+
+// .jqb-list__group-link {
+//     width: 100%;
+    
+//     .jqb-list {
+//         padding: 10px 0;
+//         &:after {
+//             border-bottom: 0;
+//         }
+//     }
+
+// }
+// .jqb-list__group-double {
+//     width: 100%;
+//     .jqb-list {
+//         padding: 10px 0;
+//         justify-content: space-between;
+//         &:after {
+//             border-bottom: 0;
+//         }
+//     }
+//     // .jqb-list__double {
+//     //     justify-content: space-between;
+//     // }
+// }
+
 .jqb-list {
     position: relative;
     display: flex;
-    box-sizing: border-box;
     width: 100%;
-    padding: 10px 16px;
     overflow: hidden;
-    color: #323233;
+    color: @globalColorBlack0;
     font-size: 14px;
     line-height: 24px;
+    background-color: #fff;
+    &__border {
+        border-top: 1px solid @globalColorBorder;
+        border-bottom: 1px solid @globalColorBorder;
+        padding-left: @verticalGap
+    }
+    &__items {
+        width: 100%;
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 2.75rem;
+        line-height: 2.75rem;
+        &:last-child {
+            &:after {
+                border: 0;
+                transform: none;
+            }
+        }
+        &:after {
+            position: absolute;
+            box-sizing: border-box;
+            content: ' ';
+            pointer-events: none;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-bottom: 1px solid @globalColorBlack2;
+            transform: scaleY(0.5);
+        }
+        &-icon {
+            display: flex;
+            width: 2rem;
+        }
+        &-link {
+            display: flex;
+            padding-right: @verticalGap;
+        }
+        &-content {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+// 基础 List 使用单兵作战
+.jqb-list__alone {
+    position: relative;
+    display: flex;
+    width: 100%;
+    // padding: 10px 16px;
+    overflow: hidden;
+    color: @globalColorBlack0;
+    font-size: 14px;
+    // line-height: 24px;
+    height: 2.75rem;
+    line-height: 2.75rem;
     background-color: #fff;
     &:after {
         position: absolute;
@@ -20,7 +152,7 @@
         pointer-events: none;
         right: 0;
         bottom: 0;
-        left: 16px;
+        left: 0;
         border-bottom: 1px solid @globalColorBlack2;
         transform: scaleY(0.5);
     }
@@ -31,33 +163,16 @@
     padding-right: 0; 
     padding-left: @verticalGap;
     position: relative;
-    display: inline-flex;
-    font-size: 14px;
 
-    .jqb-list {
-        flex: 1
-    }
-
-    .link-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10px;
-        cursor: text;
-    }
-}
-
-
-.jqb-list__group-link {
-    width: 100%;
-    
-    .jqb-list {
-        padding: 10px 0;
-        &:after {
-            border-bottom: 0;
+    .jqb-list__alone {
+        // flex: 1;
+        &:last-child {
+            &:after {
+                border: 0;
+                transform: none;
+            }
         }
     }
-
 }
 
 // .List { .am-card; padding-right:0; padding-left:@verticalGap;
