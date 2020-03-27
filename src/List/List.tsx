@@ -8,11 +8,10 @@ import Loading from '../Loading';
  * List 列表组件
  * @param {className} string 列表组件样式名
  * @param {children} any 渲染的内容
- * @param {style} object input 的样式
- * @param {hasIcon} boolean 是否展示前置图标
+ * @param {style} object 列表组件的样式
  * @param {bordered} boolean 是否展示上下变宽，默认展示
- * @param {header} ReactNode list 头部自定义
- * @param {footer} ReactNode list 尾部自定义
+ * @param {header} ReactNode 列表组件头部自定义
+ * @param {footer} ReactNode 列表组件尾部自定义
  * @param {isLoading} boolean 拉取数据时显示 loading 图标，数据拉取完毕显示内容
  * @param {dataSource} any 数据源
  * @param {renderItem} ReactNode 当有数据源时，自定义渲染列表项

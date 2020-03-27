@@ -143,3 +143,57 @@ import data from './list.data.json';
     return <Temp />;
   }}
 </Playground> -->
+
+
+## List API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| className | 列表组件样式名 | String  | - |  -  |
+| children | 渲染的内容 | any  | - |  -  |
+| style | 列表组件的样式 | object  | - |  -  |
+| bordered | 是否展示上下变宽，默认展示 | `true` `false` |  `true`  |
+| header | 列表组件头部自定义 | ReactNode  | - |  -  |
+| footer | 列表组件尾部自定义 | ReactNode  | - |  -  |
+| isLoading | 拉取数据时显示 loading 图标，数据拉取完毕显示内容 | boolean  | `true` `false` |  `false`  |
+| dataSource | 数据源 | any  | - |  -  |
+| renderItem | 当有数据源时，自定义渲染列表项 | ReactNode  | - |  -  |
+
+
+## ListItem API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| className | 列表项class | String  | - |  -  |
+| children | 渲染的内容 | any  | - |  -  |
+| style | 列表项的样式 | object  | - |  -  |
+| hasLink | 是否有链接 | boolean  | `true` `false` |  `false`  |
+| renderIcon | 渲染前图标 | ReactNode  | - |  -  |
+
+
+## ListItem 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClick | 点击列表项后的回调，前提是 hasLink 为 `true` | - |
+
+
+## ListAlone API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| className | 单个列表样式名 | String  | - |  -  |
+| children | 渲染的内容 | any  | - |  -  |
+| style | 单个列表的样式 | object  | - |  -  |
+
+
+## ListAlone 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClick | 点击列表后的回调 | - |
+
+
+## ListGroup API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| className | 单个列表样式名 | String  | - |  -  |
+| children | 渲染的内容 | any  | - |  -  |
+| style | 单个列表的样式 | object  | - |  -  |

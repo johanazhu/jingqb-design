@@ -6,22 +6,21 @@ import Icon from '../Icon';
 
 /**
  * Item 列表项 组件
- * @param {className} string 列表组件样式名
+ * @param {className} string 列表项class
  * @param {children} any 渲染的内容
- * @param {style} object input 的样式
- * @param {onLink} function 点击链接后的回调
- * @param {onClick} function 点击 Link 后的回调
- * @param {hasIcon} boolean 是否展示前置图标
+ * @param {style} object 列表项的样式
+ * @param {hasLink} boolean 是否有链接
+ * @param {renderIcon} ReactNode 渲染前图标
+ * @param {onClick} function 点击列表项后的回调
  **/
 
 export interface ItemProps {
   className?: string;
   children?: any;
   style?: React.CSSProperties;
-  onLink?: (e: any) => void;
-  onClick?: (e: any) => void;
   hasLink?: boolean;
   renderIcon?: React.ReactNode;
+  onClick?: (e: any) => void;
 }
 
 const Item = (props: ItemProps) => {
@@ -51,7 +50,6 @@ Item.defaultProps = {
   className: '',
   style: null,
   hasLink: false,
-  onLink: function() {},
   onClick: function() {},
 };
 
@@ -61,7 +59,6 @@ Item.propTypes = {
   style: PropTypes.object,
   hasLink: PropTypes.bool,
   renderIcon: PropTypes.node,
-  onLink: PropTypes.func,
   onClick: PropTypes.func,
 };
 

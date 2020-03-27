@@ -3,11 +3,11 @@ import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 /**
- * 基础List
- * @param {className} string 列表组件样式名
+ * 单个列表
+ * @param {className} string 单个列表样式名
  * @param {children} any 渲染的内容
- * @param {style} object input 的样式
- * @param {onClick} function 点击 Link 后的回调
+ * @param {style} object 单个列表的样式
+ * @param {onClick} function 点击列表后的回调
  **/
 
 export interface ListProps {
